@@ -48,6 +48,7 @@ function RouterConfig({ history, app }) {
         });
       }
     }
+    
   ];
 
 

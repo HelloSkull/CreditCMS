@@ -1,6 +1,6 @@
 import React ,{ Component } from 'react';
 import { connect } from 'dva';
-import styles from './Users.css';
+import './Users.css';
 import UsersComponent from '../components/Users/Users';
 import MainLayout from '../components/MainLayout/MainLayout';
 
@@ -9,7 +9,7 @@ class Users extends Component{
     const location = this.props.location;
     return (
       <MainLayout location={ location }>
-        <div className={ styles.normal }>
+        <div className = "normal">
           <UsersComponent />
         </div>
       </MainLayout>
