@@ -1,5 +1,5 @@
 import fetch from 'dva/fetch';
-
+import utils from  "../utils/utils";
 
 function checkStatus(response) {
   console.log("response------>",response);
@@ -12,11 +12,17 @@ function checkStatus(response) {
   throw error;
 }
 
+
 function checkResultData(data){
   if(!data.code && data.data){
     return true;
   }else{
     alert(data.message);
+    switch (data.code){
+      case 1041:
+        utils.goHref("/login");
+        break;
+    }
   }
 }
 

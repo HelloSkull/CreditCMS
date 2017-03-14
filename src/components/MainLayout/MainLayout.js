@@ -18,7 +18,7 @@ class MainLayout extends Component{
       render() {
         let children = this.props.children ? this.props.children:"";
         let pathname = this.props.location  ? this.props.location.pathname : "";
-        pathname = pathname == "/" ? "/users" : pathname;
+        pathname = pathname == "/" ? "/bondpackageManage" : pathname;
         console.log("pathname",pathname);
         return (
           <Layout id="components-main-layout" >
@@ -41,20 +41,22 @@ class MainLayout extends Component{
             </Header>
             <Layout>
               <Sider className="left-subMenu">
-                <Menu mode="inline" defaultSelectedKeys={[pathname]}>
+                <Menu mode="inline"
+                      defaultSelectedKeys={[pathname]}
+                      defaultOpenKeys={['sub1']}>
                   <SubMenu key="sub1" title={<span><Icon type="mail" /><span className="nav-text">债权管理</span></span>} >
-                    <Menu.Item key="/BondpackageManage"><Link to="/BondpackageManage">债权包管理</Link></Menu.Item>
+                    <Menu.Item key="/bondpackageManage"><Link to="/bondpackageManage">债权包管理</Link></Menu.Item>
                   </SubMenu>
                   <SubMenu key="sub2" title={<span><Icon type="appstore" /><span className="nav-text">资方管理</span></span>}>
-                    <Menu.Item key="/CreditorManage"><Link to="/CreditorManage">资方管理</Link></Menu.Item>
+                    <Menu.Item key="/creditorManage"><Link to="/creditorManage">资方管理</Link></Menu.Item>
                   </SubMenu>
                   <SubMenu key="sub3" title={<span><Icon type="appstore" /><span>订单管理</span></span>}>
-                    <Menu.Item key="/OrderLis"><Link to="/OrderList">订单列表</Link></Menu.Item>
+                    <Menu.Item key="/orderLis"><Link to="/orderLis">订单列表</Link></Menu.Item>
                   </SubMenu>
                   <SubMenu key="sub4" title={<span><Icon type="appstore" /><span>统计图表</span></span>}>
-                    <Menu.Item key="/SuccessBing"><Link to="/SuccessBing">未到期债权统计</Link></Menu.Item>
+                    <Menu.Item key="/successBing"><Link to="/successBing">未到期债权统计</Link></Menu.Item>
                     <Menu.Item key="/chart"><Link to="/chart">可卖债权统计</Link></Menu.Item>
-                    <Menu.Item key="/RechargeStrategy"><Link to="/RechargeStrategy">债权历史数据</Link></Menu.Item>
+                    <Menu.Item key="/rechargeStrategy"><Link to="/rechargeStrategy">债权历史数据</Link></Menu.Item>
                     <Menu.Item key="/dailyOrder"><Link to="/dailyOrder">债权每日放款量</Link></Menu.Item>
                   </SubMenu>
                 </Menu>
@@ -69,7 +71,6 @@ class MainLayout extends Component{
               <BackTop/>
             </Layout>
           </Layout>
-
         );
       }
   }

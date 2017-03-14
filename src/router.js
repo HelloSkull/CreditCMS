@@ -16,8 +16,8 @@ function RouterConfig({ history, app }) {
       path: '/',
       getComponent(nextState, cb) {
         require.ensure([], (require) => {
-          registerModel(app, require('./models/Users'));
-          cb(null, require('./routes/Users'));
+          registerModel(app, require('./models/BondpackageManage'));
+          cb(null, require('./routes/BondpackageManage'));
         });
       }
     },
@@ -38,7 +38,7 @@ function RouterConfig({ history, app }) {
           cb(null, require('./routes/BondpackageManage'));
         });
       }
-    },
+    }/*,
     {
       path: '/users',
       getComponent(nextState, cb) {
@@ -47,8 +47,7 @@ function RouterConfig({ history, app }) {
           cb(null, require('./routes/Users'));
         });
       }
-    }
-    
+    }*/
   ];
 
 

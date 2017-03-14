@@ -5,19 +5,15 @@ const FormItem = Form.Item;
 class LoginForm extends Component{
   okHandler =(e)=>{
     e.preventDefault();
-
     this.props.form.validateFields((err, values) => {
       const { onOk } = this.props;
-
         if (!err) {
           onOk(values)
         }
-
     });
   };
 
   render() {
-    console.log("this.props------>",this.props);
     const { getFieldDecorator } = this.props.form;
     return (
       <Row gutter={20}>

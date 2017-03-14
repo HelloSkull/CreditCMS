@@ -2,7 +2,7 @@ import React,{ Component } from "react";
 import { connect } from 'dva';
 import { Table, Pagination, Popconfirm, Button,Icon,Select} from 'antd';
 import { routerRedux } from 'dva/router';
-import styles from './Users.less';
+import './Users.less';
 import "../Common/Common.less";
 import UserModal from './UserModal';
 
@@ -21,7 +21,6 @@ class Users extends Component{
   //批量删除
   deleteHandlerByIds(){
     const delArr = this.state.selectedRowKeys;
-    console.log("delArr------->",delArr);
   }
 
   //切换每页显示的数量
@@ -140,7 +139,7 @@ class Users extends Component{
         key: 'operation1',
         className:"text-center",
         render: (text, record) => (
-          <span className={styles.operation}>
+          <span className="">
 
             <UserModal record={ record } onOk={ this.editHandler.bind(this,record.id)} title={ "编辑" }>
               <Icon type="edit" className="button-bar-icon" />
@@ -156,7 +155,7 @@ class Users extends Component{
     ];
 
     return (
-      <div className={styles.normal}>
+      <div className="">
 
         <div>
           <div className="table-operations">

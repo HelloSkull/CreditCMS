@@ -3,19 +3,22 @@ import { connect } from 'dva';
 import './Users.css';
 import UsersComponent from '../components/Users/Users';
 import MainLayout from '../components/MainLayout/MainLayout';
+import utils from "../utils/utils";
 
 class Users extends Component{
   render(){
     const location = this.props.location;
+    const ifLogin = utils.judgeLS("userInfo");
     return (
+    ifLogin ? (
       <MainLayout location={ location }>
-        <div className = "normal">
-          <UsersComponent />
-        </div>
-      </MainLayout>
+            <div className = "normal">
+              <UsersComponent />
+            </div>
+          </MainLayout>
+        ) : utils.goHref("/login")
     );
   }
-
 }
 
 // 到这里，我们已经单独完成了 model 和 component，那么他们如何串联起来呢?
