@@ -45,7 +45,6 @@ export default {
           pageSize:debtPackagePageEntity.pageSize
         }
       });
-
     },
      /**remove({ payload: id }, { call, put }) {
       yield call(usersService.remove, id);
@@ -60,7 +59,7 @@ export default {
      *create({ payload: values }, { call, put }) {
       yield call(usersService.create, values);
       yield put({ type: 'reload' });
-    },*/
+    },
      //重新加载
      *reload(action, { put, select }) {
       const [curPage,pageSize] = yield select(state => [state.users.curPage,state.users.pageSize]);
@@ -71,6 +70,7 @@ export default {
 
       yield put({ type: 'fetch', payload: query });
     }
+      */
   },
   subscriptions: {
     setup({ dispatch, history }) {

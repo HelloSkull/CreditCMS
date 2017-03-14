@@ -64,6 +64,7 @@ export default async function request(params) {
 
   const response = await fetch(params.url, P);
   checkStatus(response);
+  
   const data = await response.json();
   checkResultData(data);
   return { data };

@@ -90,7 +90,7 @@ class BondpackageManage extends Component{
                  rowSelection={ rowSelection }
                  dataSource={ dataSource }
                  loading={ loading }
-                 rowKey = {record =>record.id}
+                 rowKey = { item => item.id}
                  pagination={false}/>
 
           <PaginationPage
